@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.querySelector('#start-button')
   //afegeixo el botò de reiniciar partida
   const restartBtn = document.querySelector('#restart-button')
+  //afegeixo el botò de next per canviar les figures i la velocitat
+  const nextBtn = document.querySelector('#next-button')
   const width = 10
   let nextRandom = 0
   let timerId
@@ -209,6 +211,13 @@ document.addEventListener('DOMContentLoaded', () => {
       displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
     })
   }
+  //funcio per canviar figura i velocitat amb un doble click
+  nextBtn.addEventListener('dblclick', () => {
+      draw()
+      nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+      displayShape()
+      timerId = setInterval(2000)
+    })
 
   //add functionality to the button
   startBtn.addEventListener('click', () => {
