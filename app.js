@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const restartBtn = document.querySelector('#restart-button')
   //afegeixo el botò de next per canviar les figures i la velocitat
   const nextBtn = document.querySelector('#next-button')
+  //afegeixo el botò d'historial
+  const histBtn = document.querySelector('#hist-button')
+  const box = document.querySelector(".box");
   const width = 10
   let nextRandom = 0
   let timerId
@@ -219,6 +222,12 @@ document.addEventListener('DOMContentLoaded', () => {
       timerId = setInterval(moveDown, 2000)
     })
 
+  //funcio per veure l'historial de tecles. He aconseguit que es mostri per consola la tecla apretada.
+  histBtn.addEventListener('keydown', e => {
+    let keyName = e.keyCode === 32 ? "Space" : e.key;
+    console.log(e.keyCode);
+    console.log(keyName);
+  })
   //add functionality to the button
   startBtn.addEventListener('click', () => {
     if (timerId) {
