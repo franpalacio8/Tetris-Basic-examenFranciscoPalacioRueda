@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let squares = Array.from(document.querySelectorAll('.grid div'))
   const scoreDisplay = document.querySelector('#score')
   const startBtn = document.querySelector('#start-button')
+  //afegeixo el botò de reiniciar partida
+  const restartBtn = document.querySelector('#restart-button')
   const width = 10
   let nextRandom = 0
   let timerId
