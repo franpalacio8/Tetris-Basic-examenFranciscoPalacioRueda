@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
       draw()
       nextRandom = Math.floor(Math.random()*theTetrominoes.length)
       displayShape()
-      timerId = setInterval(2000)
+      timerId = setInterval(moveDown, 2000)
     })
 
   //add functionality to the button
